@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Awer Py</title>
+    <link rel="icon" href="/img/icons/software.png">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <!-- MENU -->
+        <div class="main_menu">
+            <a href="#" class="name_text">Yevhen Sukhachov</a>
+
+            <div class="menu_nav">
+                <a href="#section--1" class="menu_nav_item">Services</a>
+                <a href="#section--2" class="menu_nav_item">Technologies</a>
+                <a href="#section--3" class="menu_nav_item">Portfolio</a>
+                <a href="#section--4" class="menu_nav_item">Contact</a>
+            </div>
+
+
+            <div class="language_swither_block">
+                <select class="language_swither_select" id="languageSelect">
+                    <option class="language_swither_option" value="ENG">ENG</option>
+                    <option class="language_swither_option" value="UA">UA</option>
+                </select>
+                <img class="globe_white_icon" src="/img/icons/globe_white_icon.png" alt="globe_white_icon">
+            </div>
+            <!-- Кнопка бургер -->
+            <div class="main_menu_burger" id="menu_burger">
+                <span class="burger_line"></span>
+                <span class="burger_line"></span>
+                <span class="burger_line"></span>
+            </div>
+
+            <!-- Повноекранне меню -->
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-menu-inner">
+                    <div class="menu-header">
+                        <div class="language_swither_block">
+                            <select class="language_swither_select" id="languageSelect">
+                                <option class="language_swither_option" value="ENG">ENG</option>
+                                <option class="language_swither_option" value="UA">UA</option>
+                            </select>
+                            <img class="globe_white_icon" src="/img/icons/globe_white_icon.png" alt="globe_white_icon">
+                        </div>
+                        <div class="close-btn" id="closeBtn">
+                            <span class="close_line"></span>
+                            <span class="close_line"></span>
+                        </div>
+                    </div>
+                    <ul class="menu-list">
+                        <li><a href="#section--1" class="menu-link">Services</a></li>
+                        <li><a href="#section--2" class="menu-link">Technologies</a></li>
+                        <li><a href="#section--3" class="menu-link">Portfolio</a></li>
+                        <li><a href="#section--4" class="menu-link">Contact</a></li>
+                    </ul>
+
+                    <div class="menu-footer">
+                        <a href="#"><img onclick="window.location.href='https://www.linkedin.com/in/evgen-sukhachov/'"
+                                src="/img/icons/linkedin_icon.png" alt="LinkedIn" /></a>
+                        <a href="#"><img onclick="window.location.href='https://www.instagram.com/awer_py/'"
+                                src="/img/icons/instagram_icon.png" alt="Instagram" /></a>
+                        <a href="#"><img onclick="window.location.href='https://t.me/awer_pyt'"
+                                src="/img/icons/telegram_icon.png" alt="Telegram" /></a>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+        <!-- HEADER CONTENT -->
+        <div class="header_content_wrapper">
+            <div class="header_text_block">
+                <h1 class="header_text animate-left">Frontend <br> developer</h1>
+                <p class="header_subtitle">I am Yevhen - web-developer with a passion for creating beautiful and
+                    resposive websites.</p>
+                <button class="header_btn btn--scroll-to">view my work</button>
+            </div>
+            <div class="header_image">
+                <img class="group_header_image" src="/img/header_images/header_group_images.png"
+                    alt="header_group_images">
+            </div>
+        </div>
+    </header>
+
+    <section class="services_section" id="section--1">
+        <h2 class="services_header">My services</h2>
+        <div class="services_blocks_wrapper">
+            <div class="services_blocks top">
+                <div class="services_header_wrapper">
+                    <img class="services_blocks_icon" src="/img/icons/software.png" alt="software">
+                    <h3 class="services_blocks_header">Website Development</h3>
+                </div>
+                <p class="services_blocks_subtitle">
+                    I create websites based on your ready-made design. Whether it’s a landing page or a business card
+                    website.
+                    I will make it look great and work smoothly on any device.
+                </p>
+            </div>
+            <div class="services_blocks right">
+                <div class="services_header_wrapper">
+                    <img class="services_blocks_icon" src="/img/icons/fountain_pen.png" alt="fountain_pen">
+                    <h3 class="services_blocks_header">Web Design</h3>
+                </div>
+                <p class="services_blocks_subtitle">
+                    I can design your website from scratch. I create modern, simple,
+                    and user-friendly designs that match your brand and goals.
+                </p>
+            </div>
+            <div class="services_blocks left">
+                <div class="services_header_wrapper">
+                    <img class="services_blocks_icon" src="/img/icons/react_icon.png" alt="react_icon">
+                    <h3 class="services_blocks_header"> React Development</h3>
+                </div>
+                <p class="services_blocks_subtitle">
+                    I can include React in your project, if it’s hard to load and make your website loading reactive.
+                </p>
+            </div>
+        </div>
+        <!-- <div class="vertical_services_line"></div>
+        <div class="horizontal_services_line"></div> -->
+    </section>
+
+    <section class="technologies_section" id="section--2">
+        <h2 class="technologies_header">My skills</h2>
+        <h2 class="technologies_title">The skills, tools and technologies I use:</h2>
+        <div class="technologies_wrapper">
+            <div class="technologies_items_container">
+                <img src="/img/content_images/html.png" alt="#" class="technologies_item">
+                <img src="/img/content_images/css.png" alt="#" class="technologies_item">
+                <img src="/img/content_images/js.png" alt="#" class="technologies_item">
+                <img src="/img/content_images/nodejs.png" alt="#" class="technologies_item">
+                <img src="/img/content_images/vue_js.png" alt="#" class="technologies_item">
+                <img src="/img/content_images/sass.png" alt="#" class="technologies_item">
+                <img src="/img/content_images/react.png" alt="#" class="technologies_item">
+                <img src="/img/content_images/webpack.png" alt="#" class="technologies_item">
+                <img src="/img/content_images/figma.png" alt="#" class="technologies_item">
+                <img src="/img/content_images/git.png" alt="#" class="technologies_item">
+                <img src="/img/content_images/tailwind_css.png" alt="#" class="technologies_item">
+                <img src="/img/content_images/mongodb.svg" alt="#" class="technologies_item">
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio_section" id="section--3">
+        <h2 class="portfolio_header">Portfolio</h2>
+
+
+        <div class="slider-container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/img/content_images/anima.png" alt="anima"></div>
+                    <div class="swiper-slide"><img src="/img/content_images/xWear_slide.png" alt="xWear"></div>
+                    <div class="swiper-slide"><img src="/img/content_images/diveSea_slide.png" alt="diveSea"></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="gallery_images">
+            <img src="/img/content_images/anima.png" alt="anima" class="gallery_image">
+            <img src="/img/content_images/xWear_slide.png" alt="xWear" class="gallery_image">
+            <img src="/img/content_images/diveSea_slide.png" alt="diveSea" class="gallery_image">
+        </div>
+
+    </section>
+
+    <section class="contact_section" id="section--4">
+        <div class="contact_section_divider">
+            <div class="social_contacts_wrapper">
+                <div class="social_headers_wrapper">
+                    <h2 class="contact_header">Do you have a project to discuss?</h2>
+                    <h3 class="contact_header_subtitle">Get in touch <i class='bx  bx-message-dots'></i></h3>
+                </div>
+
+                <div class="contact_info_divider">
+                    <div class="contact_info_wrapper">
+                        <h3 class="contact_info_header">Contact</h3>
+                        <a class="email_link" href="#">jeka200329@gmail.com</a>
+                    </div>
+                    <div class="social_info_wrapper">
+                        <h3 class="social_info_header">Social media</h3>
+                        <div class="social_media_wrapper">
+                            <img onclick="window.location.href='https://www.linkedin.com/in/evgen-sukhachov/'"
+                                class="social_media_icon" src="/img/icons/linkedin_icon.png" alt="linkedin_icon">
+                            <img onclick="window.location.href='https://www.instagram.com/awer_py/'"
+                                class="social_media_icon" src="/img/icons/instagram_icon.png" alt="instagram_icon">
+                            <img onclick="window.location.href='https://t.me/awer_pyt'" class="social_media_icon"
+                                src="/img/icons/telegram_icon.png" alt="telegram_icon">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="contact_form_divider">
+                <h2 class="contact_form_header">Contact form</h2>
+                <form class="submit_form" id="contact-form" action="https://formsubmit.co/jeka200329@gmail.com"
+                    method="POST" novalidate>
+                    <label class="label_header" for="name">Name</label>
+                    <input class="label_area" type="text" id="name" name="name" required>
+
+                    <label class="label_header" for="email">Email</label>
+                    <input class="label_area" type="email" id="email" name="email" required>
+
+                    <label class="label_header" for="message">Message</label>
+                    <textarea class="label_area" id="message-box" name="message" required
+                        placeholder="Write your message (from 10 to 500 words and leave your @telegram)..."></textarea>
+
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
+
+                    <button class="submit_btn" type="submit">Send</button>
+                </form>
+
+                <div id="form-message"></div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer_copyright_text">@ 2025 - All rights reserved, web design and development - Yevhen Sukhachov</p>
+    </footer>
+
+    <!-- Connect Swiper CDN  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Connect Scripts  -->
+    <script src="/js/script.js" defer></script>
+
+</body>
+
+</html>
