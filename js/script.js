@@ -53,49 +53,51 @@ document.addEventListener("DOMContentLoaded", function () {
   const emailInput = document.getElementById("email");
   const messageInput = document.getElementById("message-box");
   const formMessage = document.getElementById("form-message");
-  
+
   if (form) {
-    form.addEventListener("submit", function(event) {
+    form.addEventListener("submit", function (event) {
       event.preventDefault(); // зупиняємо відправку форми
-  
+
       formMessage.textContent = "";
       formMessage.style.color = "";
-  
+
       const name = nameInput.value.trim();
       const email = emailInput.value.trim();
       const message = messageInput.value.trim();
-  
+
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      const wordsCount = message.split(/\s+/).filter(word => word.length > 0).length;
-  
+      const wordsCount = message
+        .split(/\s+/)
+        .filter((word) => word.length > 0).length;
+
       if (name === "") {
         formMessage.style.color = "red";
         formMessage.textContent = "Please enter your name. For example 'Alex'";
         nameInput.focus();
         return;
       }
-  
+
       if (!emailRegex.test(email)) {
         formMessage.style.color = "red";
         formMessage.textContent = "Please enter a valid email address.";
         emailInput.focus();
         return;
       }
-  
+
       if (wordsCount < 10) {
         formMessage.style.color = "red";
         formMessage.textContent = "Message should be at least 10 words.";
         messageInput.focus();
         return;
       }
-  
+
       if (wordsCount > 100) {
         formMessage.style.color = "red";
         formMessage.textContent = "Message should not exceed 100 words.";
         messageInput.focus();
         return;
       }
-  
+
       // Перевірка reCAPTCHA
       const recaptchaResponse = grecaptcha.getResponse();
       if (recaptchaResponse.length === 0) {
@@ -103,14 +105,13 @@ document.addEventListener("DOMContentLoaded", function () {
         formMessage.textContent = "Please verify that you are not a robot.";
         return;
       }
-  
+
       // Якщо всі перевірки пройшли
       formMessage.style.color = "green";
       formMessage.textContent = "Sending message...";
       form.submit(); // тепер відправляємо форму
     });
   }
-  
 
   // === Burger menu ===
   const burger = document.getElementById("menu_burger");
@@ -120,33 +121,32 @@ document.addEventListener("DOMContentLoaded", function () {
   burger.addEventListener("click", function () {
     this.classList.toggle("open");
     navMenu.classList.toggle("active");
-    closeBtn?.classList.toggle("open");
-    document.body.classList.toggle("menu-open"); // ДОДАНО
+    closeBtn?.classList.add("open"); // завжди додаємо, але НЕ прибираємо
+    document.body.classList.toggle("menu-open");
   });
 
   if (closeBtn) {
     closeBtn.addEventListener("click", function () {
       burger?.classList.remove("open");
       navMenu?.classList.remove("active");
-      this.classList.remove("open");
-      document.body.classList.remove("menu-open"); // ДОДАНО
+      // НЕ прибираємо this.classList.remove("open");
+      document.body.classList.remove("menu-open");
     });
   }
-});
 
-const navMenu = document.getElementById("navMenu");
-const menuLinks = navMenu.querySelectorAll("a"); // ВАЖЛИВО: тільки посилання в бургер-меню
+  // Пункт меню: закриває меню, але НЕ змінює хрестик
+  const menuLinks = navMenu.querySelectorAll("a");
 
-menuLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active"); // Закриває бургер-меню
-    document.body.classList.remove("menu-open"); 
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      burger?.classList.remove("open");
+      // НЕ прибираємо closeBtn.classList.remove("open");
+      document.body.classList.remove("menu-open");
+    });
   });
-});
 
-// Scroll smooth content
-
-document.addEventListener("DOMContentLoaded", () => {
+  // Scroll smooth content
   const sections = document.querySelectorAll("section");
 
   sections.forEach((section) => {
@@ -173,9 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   revealEls.forEach((el) => observer.observe(el));
-});
 
-document.addEventListener("DOMContentLoaded", function () {
   const section3 = document.querySelector("#section--3");
   const btnScrollTo = document.querySelector(".btn--scroll-to");
   const navMainMenu = document.querySelector(".main_menu");
@@ -213,31 +211,29 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   headerObserver.observe(header);
-});
 
-const allSections = document.querySelectorAll(".services_section");
+  const allSections = document.querySelectorAll(".services_section");
 
-// Reveal sections
-const revealSection = function (entries, observer) {
-  const [entry] = entries;
+  // Reveal sections
+  const revealSection = function (entries, observer) {
+    const [entry] = entries;
 
-  if (!entry.isIntersecting) return;
+    if (!entry.isIntersecting) return;
 
-  entry.target.classList.remove("section--hidden");
-  observer.unobserve(entry.target);
-};
+    entry.target.classList.remove("section--hidden");
+    observer.unobserve(entry.target);
+  };
 
-const sectionObserver = new IntersectionObserver(revealSection, {
-  root: null,
-  threshold: 0.15,
-});
+  const sectionObserver = new IntersectionObserver(revealSection, {
+    root: null,
+    threshold: 0.15,
+  });
 
-allSections.forEach(function (section) {
-  sectionObserver.observe(section);
-  section.classList.add("section--hidden");
-});
+  allSections.forEach(function (section) {
+    sectionObserver.observe(section);
+    section.classList.add("section--hidden");
+  });
 
-document.addEventListener("DOMContentLoaded", () => {
   const selects = document.querySelectorAll(".language_swither_select");
 
   const translations = {
@@ -279,7 +275,8 @@ document.addEventListener("DOMContentLoaded", () => {
       nameLabel: "Name",
       emailLabel: "Email",
       messageLabel: "Message",
-      messagePlaceholder: "Write your message (from 10 to 100 words and leave your @telegram/instagram/linkedin)...",
+      messagePlaceholder:
+        "Write your message (from 10 to 100 words and leave your @telegram/instagram/linkedin)...",
       sendBtn: "Send",
 
       footer:
@@ -324,7 +321,8 @@ document.addEventListener("DOMContentLoaded", () => {
       nameLabel: "Ім’я",
       emailLabel: "Електронна пошта",
       messageLabel: "Повідомлення",
-      messagePlaceholder: "Напишіть ваше повідомлення (від 10 до 100 слів і лишайте свій @телеграм/інстаграм/лінкедін)...",
+      messagePlaceholder:
+        "Напишіть ваше повідомлення (від 10 до 100 слів і лишайте свій @телеграм/інстаграм/лінкедін)...",
       sendBtn: "Надіслати",
 
       footer:
@@ -367,6 +365,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyTranslation(lang) {
     const t = translations[lang];
+
+    if (!t) {
+      console.warn(
+        `Переклад для мови "${lang}" не знайдено. Використовується ENG.`
+      );
+      lang = "ENG";
+      localStorage.setItem("language", lang);
+      return applyTranslation(lang); // повторний виклик, вже з валідною мовою
+    }
+
     const navKeys = ["services", "technologies", "portfolio", "contact"];
 
     elements.name.textContent = t.name;
@@ -403,7 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
     elements.portfolioHeader.textContent = t.portfolioHeader;
 
     elements.contactHeader.textContent = t.contactHeader;
-    elements.contactSubtitle.innerHTML = `${t.contactSubtitle} <i class='bx  bx-message-dots'></i>`;
+    elements.contactSubtitle.innerHTML = `${t.contactSubtitle} <i class='bx bx-message-dots'></i>`;
     elements.contactSectionHeader.textContent = t.contactSectionHeader;
     elements.contactEmail.textContent = t.contactEmail;
     elements.socialHeader.textContent = t.socialHeader;
@@ -421,14 +429,14 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("language", lang);
   }
 
+  // Initial translation application based on stored preference or default
+  const storedLang = localStorage.getItem("language") || "ENG";
+  applyTranslation(storedLang);
+
+  // Event listener for language switcher changes
   selects.forEach((select) => {
-    select.addEventListener("change", (e) => {
-      applyTranslation(e.target.value);
+    select.addEventListener("change", (event) => {
+      applyTranslation(event.target.value);
     });
   });
-
-  const savedLang = localStorage.getItem("language") || "ENG";
-  applyTranslation(savedLang);
 });
-
-
