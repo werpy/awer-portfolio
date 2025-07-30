@@ -235,6 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const selects = document.querySelectorAll(".language_swither_select");
+  const selectMainMenu = document.querySelectorAll(".language_swither_menu");
 
   const translations = {
     ENG: {
@@ -427,6 +428,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     selects.forEach((s) => (s.value = lang));
     localStorage.setItem("language", lang);
+
+    selectMainMenu.forEach((m) => (m.value = lang));
+    localStorage.setItem("language", lang);
+
   }
 
   // Initial translation application based on stored preference or default
@@ -436,6 +441,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Event listener for language switcher changes
   selects.forEach((select) => {
     select.addEventListener("change", (event) => {
+      applyTranslation(event.target.value);
+    });
+  });
+
+  selectMainMenu.forEach((switcher) => {
+    switcher.addEventListener("change", (event) => {
       applyTranslation(event.target.value);
     });
   });
