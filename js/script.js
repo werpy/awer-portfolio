@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // NEW
       warningHeader: "Warning message:",
       warningText:
-        "These pages I add to show you how my projects work. Do not try finding something that doesn't work in the project illustration, because I know, dude.",
+        "Now you can see working diveSea project with some bugs (this is the third card). These pages I add to show you how my projects work. Do not try finding something that doesn't work in the project illustration, because I know, dude.",
       viewMore: "View more",
     },
 
@@ -338,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // NEW
       warningHeader: "Попередження:",
       warningText:
-        "Ці сторінки я додав, щоб показати, як працюють мої проєкти. Не шукай, що не працює на ілюстраціях, бо я вже знаю, чувак.",
+        "Тепер ви можете побачити робочий проект diveSea з деякими помилками (це третя картка). Ці сторінки я додав, щоб показати, як працюють мої проєкти. Не шукай, що не працює на ілюстраціях, бо я вже знаю, чувак.",
       viewMore: "Детальніше",
     },
   };
