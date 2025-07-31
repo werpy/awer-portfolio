@@ -282,6 +282,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       footer:
         "@ 2025 - All rights reserved, web design and development - Yevhen Sukhachov",
+
+      // NEW
+      warningHeader: "Warning message:",
+      warningText:
+        "These pages I add to show you how my projects work. Do not try finding something that doesn't work in the project illustration, because I know, dude.",
+      viewMore: "View more",
     },
 
     UA: {
@@ -328,6 +334,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       footer:
         "@ 2025 - Всі права захищені. Дизайн і розробка сайту — Євген Сухачов",
+
+      // NEW
+      warningHeader: "Попередження:",
+      warningText:
+        "Ці сторінки я додав, щоб показати, як працюють мої проєкти. Не шукай, що не працює на ілюстраціях, бо я вже знаю, чувак.",
+      viewMore: "Детальніше",
     },
   };
 
@@ -362,6 +374,11 @@ document.addEventListener("DOMContentLoaded", function () {
     sendBtn: document.querySelector(".submit_btn"),
 
     footer: document.querySelector(".footer p"),
+
+    // NEW
+    warningHeaders: document.querySelectorAll(".warning_message_header"),
+    warningTexts: document.querySelectorAll(".warning_message_subtitle"),
+    viewMoreButtons: document.querySelectorAll(".view_more"),
   };
 
   function applyTranslation(lang) {
@@ -373,21 +390,19 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       lang = "ENG";
       localStorage.setItem("language", lang);
-      return applyTranslation(lang); // повторний виклик, вже з валідною мовою
+      return applyTranslation(lang);
     }
 
     const navKeys = ["services", "technologies", "portfolio", "contact"];
 
     elements.name.textContent = t.name;
 
-    // Оновлення десктопного меню
     elements.navItemsDesktop.forEach((el, i) => {
       if (t[navKeys[i]]) {
         el.textContent = t[navKeys[i]];
       }
     });
 
-    // Оновлення мобільного меню
     elements.navItemsMobile.forEach((el, i) => {
       if (t[navKeys[i]]) {
         el.textContent = t[navKeys[i]];
@@ -426,19 +441,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     elements.footer.textContent = t.footer;
 
-    selects.forEach((s) => (s.value = lang));
-    localStorage.setItem("language", lang);
+    // NEW TRANSLATIONS FOR WARNING CARDS
+    elements.warningHeaders.forEach((el) => {
+      el.textContent = t.warningHeader;
+    });
 
+    elements.warningTexts.forEach((el) => {
+      el.textContent = t.warningText;
+    });
+
+    elements.viewMoreButtons.forEach((el) => {
+      el.textContent = t.viewMore;
+    });
+
+    selects.forEach((s) => (s.value = lang));
     selectMainMenu.forEach((m) => (m.value = lang));
     localStorage.setItem("language", lang);
-
   }
 
-  // Initial translation application based on stored preference or default
   const storedLang = localStorage.getItem("language") || "ENG";
   applyTranslation(storedLang);
 
-  // Event listener for language switcher changes
   selects.forEach((select) => {
     select.addEventListener("change", (event) => {
       applyTranslation(event.target.value);
