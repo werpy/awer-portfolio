@@ -415,6 +415,7 @@ html {
   object-fit: cover;
   display: block;
   border-radius: 40px;
+  cursor: pointer;
 }
 
 .swiper-pagination {
@@ -653,6 +654,7 @@ input[type="email"] {
     margin-top: 50px;
     margin-bottom: 50px;
     border-radius: 30px;
+    cursor: pointer;
   }
 }
 
