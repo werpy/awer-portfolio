@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // NEW
       warningHeader: "Warning message:",
       warningText:
-        "Now you can see working diveSea and xWear projects with some bugs (this is the second and third card). This pages I add to show you how my projects working. Do not try finding something not work in project ilustration, because I know, dude.",
+        "Now you can see working all projects with some bugs (this is the second and third card). This pages I add to show you how my projects working. Do not try finding something not work in project ilustration, because I know, dude.",
       viewMore: "View more",
     },
 
@@ -338,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // NEW
       warningHeader: "Попередження:",
       warningText:
-        "Тепер ви можете побачити робочий проект diveSea та xWear проекти з деякими помилками (це друга і третя картка). Ці сторінки я додав, щоб показати, як працюють мої проєкти. Не шукай, що не працює на ілюстраціях, бо я вже знаю, чувак.",
+        "Тепер ви можете побачити всі робочі проекти з деякими помилками (це друга і третя картка). Ці сторінки я додав, щоб показати, як працюють мої проєкти. Не шукай, що не працює на ілюстраціях, бо я вже знаю, чувак.",
       viewMore: "Детальніше",
     },
   };
